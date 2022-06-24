@@ -11,7 +11,7 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
-    backgroundColor: "#b2beb5",
+    backgroundColor: "transparent",
   },
   logo: {
     display: "flex",
@@ -44,9 +44,9 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const NavBar = () => {
+const NavBar = ({ activeLink, handleLink}) => {
   const classes = useStyles();
-  const [links] = useState(["Home", "Services", "Projects", "Skills", "Contact"]);
+  const [links] = useState(["home", "services", "projects", "skills", "contact"]);
 
   return (
     <Grid container className={classes.root}>
@@ -54,16 +54,18 @@ const NavBar = () => {
         <p>My logo</p>
       </Box>
       <Box className={classes.links}>
-        {links.map((el,i) => (
+        {links.map((el, index) => (
           <Links
             linkName={el}
             key={el}
-            index={i}
+            index={index}
+            handle={handleLink}
+            activeLink={activeLink}
           />
         ))}
       </Box>
       <Box className={classes.btnCont}>
-        <Link className={classes.linkedIn} to='https://www.linkedin.com/in/akinladetemitope' target="_blank">
+        <a className={classes.linkedIn} href='https://www.linkedin.com/in/akinladetemitope' target="_blank">
           <Button
             type="button"
             className={classes.FilterBtn}
@@ -71,7 +73,7 @@ const NavBar = () => {
           >
             LinkedIn
           </Button>
-        </Link>
+        </a>
       </Box>
     </Grid>
   );

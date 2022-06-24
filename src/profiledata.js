@@ -2,7 +2,7 @@ export const myData = {
   name: "Akinlade Temitope",
   job: "Full-Stack Engineer",
   projects: [],
-  skills: [
+  mySkills: [
     {
       name: "BackEnd Development",
       image:
