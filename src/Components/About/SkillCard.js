@@ -5,10 +5,10 @@ import SkillImage from "./SkillImage"
 import SkillTitle from "./SkillTitle"
 import SkillDesc from "./SkillDesc"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     root: {
         position: 'relative',
-        width: '25%',
+        width: '100%',
         display: 'flex',
         padding: '12px 0',
         borderRadius: 8,
@@ -20,6 +20,9 @@ const useStyles = makeStyles(() => ({
         "&:hover": {
             boxShadow: '0 1px 8px grey',
             transform: 'scale(1.02)'
+        },
+        [theme.breakpoints.up('lg')]: {
+          width: '25%',
         }
     }
 }))

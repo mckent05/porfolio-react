@@ -3,13 +3,19 @@ import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles"
 import SkillCard from "./SkillCard";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     root: {
         position: 'relative',
         width: '90%',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'space-around',
-        alignContent: 'center'
+        alignContent: 'center',
+        rowGap: 30,
+        [theme.breakpoints.up('lg')]: {
+          flexDirection: 'row',
+          height: '80vh'
+        }
     }
 }))
 

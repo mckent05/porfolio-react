@@ -1,5 +1,5 @@
 import React from "react";
-import { useStyles } from "../../styles";
+import { makeStyles } from "../../styles";
 import {
     Grid,
     Button,
