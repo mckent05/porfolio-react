@@ -2,12 +2,16 @@ import React from 'react'
 import { Box, Typography} from "@mui/material"
 import { makeStyles } from "@mui/styles"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: '#fff',
         border: '1px solid #0b0b45',
         borderRadius: '4px',
-        boxShadow: '0 2px 7px grey'
+        order: 1,
+        boxShadow: '0 2px 7px grey',
+        [theme.breakpoints.up('lg')]: {
+          order: 2
+        }
     }
 }))
 

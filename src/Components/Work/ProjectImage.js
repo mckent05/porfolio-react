@@ -2,11 +2,15 @@ import React from "react";
 import { Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    width: "50%",
+    width: '100%',
     position: "relative",
     height: "40vh",
+    [theme.breakpoints.up('lg')]: {
+      width: "50%",
+    }
+
   },
   img: {
     position: "relative",

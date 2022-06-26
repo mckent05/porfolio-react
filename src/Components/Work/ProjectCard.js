@@ -5,15 +5,20 @@ import ProjectDetails from "./ProjectDetails"
 import ProjectImage from "./ProjectImage"
 
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     root: {
         position: "relative",
-        width: '30%',
+        width: "90%",
         display: 'flex',
+        flexDirection: 'column',
         padding: '8px 6px',
         transition: "ease-in 0.5s",
         "&:hover": {
             transform: "scale(1.2)"
+        },
+        [theme.breakpoints.up('lg')] : {
+            width: '30%',
+            flexDirection: 'row',
         }
     }
 }))
