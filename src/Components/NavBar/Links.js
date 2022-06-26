@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
 import { Link } from "react-scroll";
 import { makeStyles } from "@mui/styles";
 
@@ -32,7 +31,13 @@ const Links = ({ linkName, index, handle, activeLink }) => {
           : classes.link
       }
     >
-      <Link to={`${linkName}`} spy={true} smooth={true} onClick={() => handle(index)}>
+      <Link
+        to={`${linkName}`}
+        spy={true}
+        smooth={true}
+        offset={-50}
+        onClick={() => handle(index)}
+      >
         {" "}
         {linkName}
       </Link>

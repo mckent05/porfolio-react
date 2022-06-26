@@ -10,15 +10,15 @@ export const theme = createTheme({
 //       fontWeight: "bold"
 //     }
 //   },
-//   overrides: {
-//     MuiInput: {
-//       input: {
-//         fontWeight: "bold"
-//       }
-//     }
-//   },
+  overrides: {
+    MuiInput: {
+      input: {
+        fontWeight: "bold"
+      }
+    }
+  },
   palette: {
-    primary: { main: "#3A8DFF" },
+    primary: { main: "#0b0b45" },
     secondary: { main: "#B0B0B0" }
   }
 });
