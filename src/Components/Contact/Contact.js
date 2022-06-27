@@ -13,7 +13,10 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
     alignItem: "center",
     justifyContent: "center",
-    border: '2px solid red'
+    border: '2px solid red',
+    "& .MuiInputBase-Input": {
+        width: '100vw'
+    }
   },
   name: {
     position: "relative",
