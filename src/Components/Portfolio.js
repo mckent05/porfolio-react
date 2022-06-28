@@ -10,6 +10,7 @@ import About from "./About/About";
 import styled from "styled-components";
 import SectionHeader from "./SectionHeader";
 import Contact from "./Contact/Contact";
+import Work from "./Work/Work";
 
 const Div = styled.div`
   width: 100vw;
@@ -46,6 +47,7 @@ const Portfolio = () => {
   const [display, setDisplay] = useState({
     services: false,
     skills: false,
+    work: false,
     contact: false,
   });
 
@@ -53,8 +55,11 @@ const Portfolio = () => {
 
   const [navFixed, setNavFixed] = useState(false);
 
+  const [featuredProjects, setFeaturedProjects] = useState(projects);
+
   const services = useRef(null),
     skills = useRef(null),
+    work = useRef(null),
     contactForm = useRef(null);
 
   const handleActiveLink = (index) => {
@@ -63,14 +68,19 @@ const Portfolio = () => {
 
   useLayoutEffect(() => {
     const topPosition = (element) => element.offsetTop;
+    const displayElement = (element, elementIndex) => {
+      setDisplay((state) => ({ ...state, [element]: true }));
+      setActive(elementIndex);
+    };
 
     const servicesTop = topPosition(services.current),
       skillsTop = topPosition(skills.current),
+      workTop = topPosition(work.current),
       contactFormTop = topPosition(contactForm.current);
 
     const onScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
-      console.log(scrollPosition, servicesTop); 
+      console.log(scrollPosition, servicesTop);
 
       if (scrollPosition > 1000) {
         setNavFixed(true);
@@ -82,17 +92,18 @@ const Portfolio = () => {
       }
 
       if (servicesTop + 300 < scrollPosition) {
-        setDisplay((state) => ({ ...state, services: true }));
-        setActive(1);
+        displayElement("services", 1);
+      }
+
+      if (workTop + 300 < scrollPosition) {
+        displayElement("work", 2);
       }
 
       if (skillsTop + 200 < scrollPosition) {
-        setDisplay((state) => ({ ...state, skills: true }));
-        setActive(3);
+        displayElement("skills", 3);
       }
       if (contactFormTop + 200 < scrollPosition) {
-        setDisplay((state) => ({ ...state, contact: true }));
-        setActive(4);
+        displayElement("contact", 4);
       }
     };
 
@@ -121,12 +132,16 @@ const Portfolio = () => {
         <SectionHeader text="What" spanText="I Do" />
         <About about={mySkills} />
       </Div>
+      <Div animate={display.work} id="projects" ref={work}>
+        <SectionHeader text="Featured" spanText="Projects" />
+        <Work projects={featuredProjects} />
+      </Div>
       <Div animate={display.skills} id="skills" ref={skills}>
         <SectionHeader text="My" spanText="Skills" />
         <About about={mySkills} />
       </Div>
       <Div animate={display.contact} id="contact" ref={contactForm}>
-        <SectionHeader text="Chat" spanText="With Me" />
+        <SectionHeader text="Contact" spanText="Me" />
         <Contact />
       </Div>
     </Grid>

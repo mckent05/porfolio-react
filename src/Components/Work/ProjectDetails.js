@@ -24,12 +24,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const ProjectDetails = ({details}) => {
+const ProjectDetails = ({details, title, skills}) => {
   const classes = useStyles()
   return (
     <Box className={classes.root}>
+        <Typography>{title}</Typography>
         <Typography>{details}</Typography>
-        <ProjectSkills />
+        <ProjectSkills skills={skills}/>
     </Box>
   )
 }

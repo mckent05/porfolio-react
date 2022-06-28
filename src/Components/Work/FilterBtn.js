@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "../../styles";
+import { makeStyles } from "@mui/styles";
 import {
     Grid,
     Button,

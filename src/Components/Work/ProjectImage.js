@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import ProjectLinks from "./ProjectLinks";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,12 +22,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProjectImage = ({ img }) => {
+const ProjectImage = ({ image, liveLink, gitHubLink }) => {
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
-      <img className={classes.img} src={img} alt="project-img" />
+      <img className={classes.img} src={image} alt="project-img" />
+      <ProjectLinks liveLink={liveLink} githubLink={gitHubLink} />
     </Box>
   );
 };

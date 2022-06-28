@@ -23,12 +23,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const ProjectCard = () => {
+const ProjectCard = ({title, details, img, skills, live, github}) => {
     const classes = useStyles()
   return (
     <Box className={classes.root}>
-        <ProjectDetails />
-        <ProjectImage />
+        <ProjectDetails title={title} skills={skills} details={details}/>
+        <ProjectImage image={img} liveLink={live} gitHubLink={github} />
     </Box>
   )
 }
