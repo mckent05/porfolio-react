@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
             transform: "scale(1.2)"
         },
         [theme.breakpoints.up('lg')] : {
-            width: '30%',
+            width: '33%',
             flexDirection: 'row',
         }
     }

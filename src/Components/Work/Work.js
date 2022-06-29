@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import FilterBtn from "./FilterBtn";
 import ProjectCard from "./ProjectCard";
@@ -14,15 +14,14 @@ container: {
 },
 btnContainer: {
     position: 'relative',
-    width: "90%",
+    width: "95%",
     display: "flex",
-    justifyContent: 'space-around',
     margin: '0 auto',
     border: "2px solid red"
 },
   root: {
     position: "relative",
-    width: "90%",
+    width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -64,7 +63,7 @@ const Work = ({ projects }) => {
   }, [projects]);
 
   return (
-    <Grid className={classes.container}>
+    <Box>
       <Box className={classes.btnContainer}>
           {
               filterTech.map((tech) => (<FilterBtn title={tech} />))
@@ -82,7 +81,7 @@ const Work = ({ projects }) => {
           />
         ))}
       </Box>
-    </Grid>
+    </Box>
   );
 };
 

@@ -6,7 +6,7 @@ import ProjectSkills from "./ProjectSkills"
 const useStyles = makeStyles((theme) => ({
   root: {
       position: "relative",
-      width: '50%',
+      width: '65%',
       display: 'flex',
       order: 2,
       flexDirection: "column",

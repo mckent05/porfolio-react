@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     height: "40vh",
     [theme.breakpoints.up('lg')]: {
-      width: "50%",
+      width: "30%",
     }
 
   },
