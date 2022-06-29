@@ -1,7 +1,7 @@
 import React from "react";
-import { makeStyles } from '@mui/styles'
+import { makeStyles } from "@mui/styles";
 import Portfolio from "./Components/Portfolio";
-import "./App.css"
+import "./App.css";
 
 function App() {
   return (
