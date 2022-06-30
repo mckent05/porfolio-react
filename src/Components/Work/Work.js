@@ -5,43 +5,54 @@ import FilterBtn from "./FilterBtn";
 import ProjectCard from "./ProjectCard";
 
 const useStyles = makeStyles((theme) => ({
-container: {
-    position: 'relative',
+  container: {
+    position: "relative",
     width: "100vw",
     display: "flex",
     flexDirection: "column",
     rowGap: 25,
-},
-btnContainer: {
-    position: 'relative',
-    width: "95%",
-    display: "flex",
-    margin: '0 auto',
-    border: "2px solid red"
-},
-  root: {
+  },
+  btnContainer: {
     position: "relative",
     width: "100%",
+    display: "flex",
+    flexWrap: "wrap",
+    rowGap: 10,
+    justifyContent: "space-around",
+    margin: "0 auto 50px auto",
+    [theme.breakpoints.up("lg")]: {
+      width: "70%",
+    },
+  },
+  root: {
+    position: "relative",
+    width: "98%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+    padding: "20px 0",
+    margin: "0 auto",
     rowGap: 15,
+    transition: "ease-in 0.5s",
     [theme.breakpoints.up("lg")]: {
       flexWrap: "wrap",
       flexDirection: "row",
       alignSelf: "center",
       columnGap: 15,
-      rowGap: 15,
-      border: "2px solid blue"
+      rowGap: 25,
     },
   },
 }));
 
-const Work = ({ projects }) => {
+const Work = ({ allProjects }) => {
   const classes = useStyles();
 
   const [filterTech, setFilterTech] = useState([]);
+
+  const [projects, setProjects] = useState(allProjects);
+
+  const [ activeButton, setActiveButton ] =useState('all')
 
   const getFilterButtons = (projectsArray) => {
     const getTech = projectsArray.reduce(
@@ -58,16 +69,28 @@ const Work = ({ projects }) => {
     setFilterTech(getTech);
   };
 
+  const filterProjects = (techName) => {
+    if (techName !== "all") {
+      const filteredProjects = allProjects.filter((project) =>
+        project.tech.includes(techName)
+      );
+      setProjects(filteredProjects);
+    } else {
+      setProjects(allProjects);
+    }
+    setActiveButton(techName)
+  };
+
   useEffect(() => {
-    getFilterButtons(projects);
-  }, [projects]);
+    getFilterButtons(allProjects);
+  }, [allProjects]);
 
   return (
     <Box>
       <Box className={classes.btnContainer}>
-          {
-              filterTech.map((tech) => (<FilterBtn title={tech} />))
-          }
+        {filterTech.map((tech) => (
+          <FilterBtn title={tech} filter={filterProjects} active={activeButton} />
+        ))}
       </Box>
       <Box className={classes.root}>
         {projects.map((project) => (

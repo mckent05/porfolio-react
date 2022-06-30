@@ -2,18 +2,21 @@ import React from "react";
 import { Link } from "react-scroll";
 import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   link: {
-    color: "#fff",
+    color: '#0b0b45',
     fontSize: 23,
     textDecoration: "none",
     textTransform: "capitalize",
     cursor: "pointer",
     paddingBottom: 8,
     transition: "all 0.5s",
-    "&:hover": {
-      color: "#0b0b45",
-    },
+    [theme.breakpoints.up('lg')] : {
+      color: "#fff",
+      "&:hover": {
+        color: "#0b0b45",
+      },
+    }
   },
   active: {
     borderBottom: "2px solid #0b0b45",

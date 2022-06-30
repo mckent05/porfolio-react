@@ -9,16 +9,20 @@ const useStyles = makeStyles((theme) => ({
     root: {
         position: "relative",
         width: "90%",
+        height: "80vh",
         display: 'flex',
+        rowGap: 12,
+        alignItems: 'center',
+        justifyContent: 'center',
         flexDirection: 'column',
         padding: '8px 6px',
         transition: "ease-in 0.5s",
         "&:hover": {
-            transform: "scale(1.2)"
+            transform: "scale(1.05)"
         },
         [theme.breakpoints.up('lg')] : {
-            width: '33%',
-            flexDirection: 'row',
+            width: '30%',
+            flexDirection: 'column',
         }
     }
 }))

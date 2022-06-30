@@ -12,17 +12,23 @@ import SectionHeader from "./SectionHeader";
 import Contact from "./Contact/Contact";
 import Work from "./Work/Work";
 
-const Div = styled.div`
-  width: 100vw;
-  height: auto !important;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 25px;
-  transform: translateX(${({ animate }) => (animate ? "0" : "-100vw")});
-  transition: ease-out 1.5s;
-`;
+const createDiv = ((hexColor) => {
+  const Div = styled.div`
+    width: 100vw;
+    height: auto !important;
+    background-color: #${hexColor};
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 25px;
+    transform: translateX(${({ animate }) => (animate ? "0" : "-100vw")});
+    transition: ease-out 1.5s;
+  `;
+  return Div;
+});
+
+const ServiceDiv = createDiv("fff"),
+  ProjectDiv = createDiv("b0b25b");
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -42,7 +48,7 @@ const Portfolio = () => {
 
   const theme = useTheme();
 
-  const { job, name, projects, mySkills } = myData;
+  const { job, name, projects, mySkills, socialLinks } = myData;
 
   const [display, setDisplay] = useState({
     services: false,
@@ -55,7 +61,7 @@ const Portfolio = () => {
 
   const [navFixed, setNavFixed] = useState(false);
 
-  const [featuredProjects, setFeaturedProjects] = useState(projects);
+  const [featuredProjects] = useState(projects);
 
   const services = useRef(null),
     skills = useRef(null),
@@ -68,6 +74,7 @@ const Portfolio = () => {
 
   useLayoutEffect(() => {
     const topPosition = (element) => element.offsetTop;
+    
     const displayElement = (element, elementIndex) => {
       setDisplay((state) => ({ ...state, [element]: true }));
       setActive(elementIndex);
@@ -118,7 +125,7 @@ const Portfolio = () => {
     <Grid container className={classes.root}>
       <Box className={classes.cont} id="home">
         {isMobile ? (
-          <DrawerComponent />
+          <DrawerComponent social={socialLinks} active={active} handle={handleActiveLink} />
         ) : (
           <NavBar
             activeLink={active}
@@ -128,22 +135,22 @@ const Portfolio = () => {
         )}
         <Home name={name} jobTitle={job} />
       </Box>
-      <Div animate={display.services} id="services" ref={services}>
+      <ServiceDiv animate={display.services} id="services" ref={services}>
         <SectionHeader text="What" spanText="I Do" />
         <About about={mySkills} />
-      </Div>
-      <Div animate={display.work} id="projects" ref={work}>
-        <SectionHeader text="Featured" spanText="Projects" />
-        <Work projects={featuredProjects} />
-      </Div>
-      <Div animate={display.skills} id="skills" ref={skills}>
+      </ServiceDiv>
+      <ProjectDiv animate={display.work} id="projects" ref={work}>
+        <SectionHeader text="My" spanText="Projects" />
+        <Work allProjects={featuredProjects} />
+      </ProjectDiv>
+      <ServiceDiv animate={display.skills} id="skills" ref={skills}>
         <SectionHeader text="My" spanText="Skills" />
         <About about={mySkills} />
-      </Div>
-      <Div animate={display.contact} id="contact" ref={contactForm}>
+      </ServiceDiv>
+      <ProjectDiv animate={display.contact} id="contact" ref={contactForm}>
         <SectionHeader text="Contact" spanText="Me" />
         <Contact />
-      </Div>
+      </ProjectDiv>
     </Grid>
   );
 };

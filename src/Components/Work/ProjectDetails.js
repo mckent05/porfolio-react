@@ -6,8 +6,10 @@ import ProjectSkills from "./ProjectSkills"
 const useStyles = makeStyles((theme) => ({
   root: {
       position: "relative",
-      width: '65%',
+      width: '90%',
       display: 'flex',
+      alignItems: 'center',
+      rowGap: 15,
       order: 2,
       flexDirection: "column",
       justifyContent: 'space-between',
@@ -21,6 +23,14 @@ const useStyles = makeStyles((theme) => ({
         }
       },
      
+  },
+  title: {
+    fontSize: 21,
+    fontWeight: 800,
+    textAlign: 'center',
+    color: 'black',
+    width: '100%',
+    textTransform: 'capitalize'
   }
 }))
 
@@ -28,8 +38,8 @@ const ProjectDetails = ({details, title, skills}) => {
   const classes = useStyles()
   return (
     <Box className={classes.root}>
-        <Typography>{title}</Typography>
-        <Typography>{details}</Typography>
+        <h1  className={classes.title}>{title}</h1>
+        <p className={classes.details}>{details}</p>
         <ProjectSkills skills={skills}/>
     </Box>
   )

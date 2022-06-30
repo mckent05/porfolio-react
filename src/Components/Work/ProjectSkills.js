@@ -1,27 +1,33 @@
-import React from 'react'
-import { Box, Typography} from "@mui/material"
-import { makeStyles } from "@mui/styles"
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        backgroundColor: '#fff',
-        border: '1px solid #0b0b45',
-        borderRadius: '4px',
-        order: 1,
-        boxShadow: '0 2px 7px grey',
-        [theme.breakpoints.up('lg')]: {
-          order: 2
-        }
-    }
-}))
+  root: {
+    backgroundColor: "#fff",
+    width: "80%",
+    borderRadius: "4px",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    order: 1,
+    padding: '5px 5px',
+    boxShadow: "0 2px 7px grey",
+    [theme.breakpoints.up("lg")]: {
+      order: 2,
+    },
+  },
+}));
 
 const ProjectSkills = ({ skills }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <Box className={classes.root}>
-        <Typography>{skills.join('/')}</Typography>
+      <Typography>
+        {skills.length >= 4 ? skills.slice(0, 4).join("/") : skills.join("/")}
+      </Typography>
     </Box>
-  )
-}
+  );
+};
 
-export default ProjectSkills
+export default ProjectSkills;

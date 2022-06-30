@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     height: "40vh",
     [theme.breakpoints.up('lg')]: {
-      width: "30%",
+      width: "90%",
+      border: '2px solid yellow'
     }
 
   },
