@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Underline = () => {
-  const classes = useStyles();
+  const classes = useStyles()
   return <div className={classes.underline} />;
 };
 
