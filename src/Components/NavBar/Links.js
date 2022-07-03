@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')] : {
       color: "#fff",
       "&:hover": {
-        color: "#0b0b45",
+        color: "#0b0b45"
       },
     }
   },
