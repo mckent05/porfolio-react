@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
     position: "fixed",
     top: 0,
     left: 0,
-    backgroundColor: "#b2beb5",
+    backgroundColor: "#fff",
     zIndex: 10,
     boxShadow: "0 2px 8px #b2beb5",
   },

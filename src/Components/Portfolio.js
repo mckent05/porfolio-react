@@ -93,7 +93,7 @@ const Portfolio = () => {
         setNavFixed(true);
       }
 
-      if (scrollPosition < 1000) {
+      if (scrollPosition <= window.innerHeight) {
         setNavFixed(false);
         setActive(0);
       }
@@ -140,8 +140,8 @@ const Portfolio = () => {
         <About about={mySkills} />
       </ServiceDiv>
       <ProjectDiv animate={display.work} id="projects" ref={work}>
-        <SectionHeader text="My" spanText="Projects" />
-        <Work allProjects={featuredProjects} />
+        <SectionHeader text="" spanText="Projects" />
+        <Work allProjects={featuredProjects} isMobile={isMobile} />
       </ProjectDiv>
       <ServiceDiv animate={display.skills} id="skills" ref={skills}>
         <SectionHeader text="My" spanText="Skills" />

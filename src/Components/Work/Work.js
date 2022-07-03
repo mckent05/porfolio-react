@@ -45,14 +45,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Work = ({ allProjects }) => {
+const Work = ({ allProjects, isMobile }) => {
   const classes = useStyles();
 
   const [filterTech, setFilterTech] = useState([]);
 
+  const [limit, setLimit] = useState({ lowerLimit: 0, upperLimit: 3 });
+
   const [projects, setProjects] = useState(allProjects);
 
-  const [ activeButton, setActiveButton ] =useState('all')
+  const viewMoreProjects = () => {
+    setLimit((state) => ({ ...state, upperLimit: state.upperLimit + 3 }));
+  };
+
+  const viewLessProjects = () => {
+    setLimit((state) => ({ ...state, upperLimit: state.upperLimit - 3 }));
+  };
+
+  const [activeButton, setActiveButton] = useState("all");
 
   const getFilterButtons = (projectsArray) => {
     const getTech = projectsArray.reduce(
@@ -78,7 +88,7 @@ const Work = ({ allProjects }) => {
     } else {
       setProjects(allProjects);
     }
-    setActiveButton(techName)
+    setActiveButton(techName);
   };
 
   useEffect(() => {
@@ -89,21 +99,56 @@ const Work = ({ allProjects }) => {
     <Box>
       <Box className={classes.btnContainer}>
         {filterTech.map((tech) => (
-          <FilterBtn title={tech} filter={filterProjects} active={activeButton} />
-        ))}
-      </Box>
-      <Box className={classes.root}>
-        {projects.map((project) => (
-          <ProjectCard
-            title={project.title}
-            details={project.description}
-            img={project.image}
-            skills={project.tech}
-            live={project.live}
-            github={project.source}
+          <FilterBtn
+            title={tech}
+            filter={filterProjects}
+            active={activeButton}
           />
         ))}
       </Box>
+      <Box className={classes.root}>
+        {isMobile
+          ? projects
+              .slice(limit.lowerLimit, limit.upperLimit)
+              .map((project) => (
+                <ProjectCard
+                  title={project.title}
+                  details={project.description}
+                  img={project.image}
+                  skills={project.tech}
+                  live={project.live}
+                  github={project.source}
+                />
+              ))
+          : projects.map((project) => (
+              <ProjectCard
+                title={project.title}
+                details={project.description}
+                img={project.image}
+                skills={project.tech}
+                live={project.live}
+                github={project.source}
+              />
+            ))}
+      </Box>
+      {isMobile && (
+        <Box>
+          {projects.length >= 3 && (
+            <Box>
+              <button
+                disabled={limit.upperLimit >= projects.length && true}
+                onClick={() => viewMoreProjects()}
+              >
+                view more
+              </button>
+              <button 
+              disabled={limit.upperLimit <= 3 && true}
+              onClick={() => viewLessProjects()}
+              >view less</button>
+            </Box>
+          )}
+        </Box>
+      )}
     </Box>
   );
 };

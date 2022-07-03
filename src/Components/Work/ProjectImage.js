@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     height: "40vh",
     [theme.breakpoints.up('lg')]: {
       width: "90%",
-      border: '2px solid yellow'
     }
 
   },

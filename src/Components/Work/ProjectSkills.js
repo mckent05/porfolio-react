@@ -5,7 +5,7 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#fff",
-    width: "80%",
+    width: "100%",
     borderRadius: "4px",
     display: 'flex',
     alignItems: 'center',
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '5px 5px',
     boxShadow: "0 2px 7px grey",
     [theme.breakpoints.up("lg")]: {
-      order: 2,
+      width: "80%",
     },
   },
 }));

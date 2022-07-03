@@ -9,10 +9,11 @@ const useStyles = makeStyles((theme) => ({
       width: '90%',
       display: 'flex',
       alignItems: 'center',
-      rowGap: 15,
+      rowGap: 5,
       order: 2,
+      height: '40%',
       flexDirection: "column",
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
       "& .MuiTypography-root": {
         order: 2
       },
@@ -31,7 +32,16 @@ const useStyles = makeStyles((theme) => ({
     color: 'black',
     width: '100%',
     textTransform: 'capitalize'
+  },
+  details: {
+    height: '80%',
+    textAlign:'left',
+    display: 'flex',
+    alignItems: 'center'
+
+
   }
+
 }))
 
 const ProjectDetails = ({details, title, skills}) => {
