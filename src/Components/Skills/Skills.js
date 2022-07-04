@@ -10,6 +10,7 @@ const Skills = ({ skills }) => {
                 skills.map((skill) => (<TechSkill image={skill.logo} techName={skill.name} />))
             }
         </Box>
+        <h3></h3>
     </Box>
   )
 }
