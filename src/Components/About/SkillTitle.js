@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: "90%"
+    width: "90%",
     "& .MuiTypography-root": {
       fontSize: "18px",
       fontWeight: 600,

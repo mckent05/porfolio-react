@@ -4,8 +4,8 @@ import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(() => ({
   imageCont: {
-    width: 80,
-    height: 80,
+    width: 65,
+    height: 65,
     backgroundColor: '#fff',
     boxShadow: '0 2px 10px grey',
     borderRadius: '100%',
@@ -34,7 +34,7 @@ const useStyles = makeStyles(() => ({
       position: 'relative',
       width: '100%',
       height: '100%',
-      objectFit: 'cover',
+      objectFit: 'contain',
       borderRadius: '100%'
   },
 }))

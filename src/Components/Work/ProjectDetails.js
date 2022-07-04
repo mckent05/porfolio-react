@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
      
   },
   title: {
-    fontSize: 21,
+    fontSize: 22,
     fontWeight: 800,
     textAlign: 'center',
     color: 'black',
@@ -37,9 +37,7 @@ const useStyles = makeStyles((theme) => ({
     height: '80%',
     textAlign:'left',
     display: 'flex',
-    alignItems: 'center'
-
-
+    alignItems: 'center',
   }
 
 }))

@@ -27,8 +27,8 @@ const createDiv = ((hexColor) => {
   return Div;
 });
 
-const ServiceDiv = createDiv("fff"),
-  ProjectDiv = createDiv("b0b25b");
+const ServiceDiv = createDiv("f2f2f2"),
+  ProjectDiv = createDiv("e5e5e5");
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -37,7 +37,7 @@ const useStyles = makeStyles(() => ({
   cont: {
     width: "100%",
     height: "100vh",
-    backgroundColor: "#b2beb5",
+    backgroundColor: "#ccc",
     display: "flex",
     flexDirection: "column",
   },
@@ -48,7 +48,7 @@ const Portfolio = () => {
 
   const theme = useTheme();
 
-  const { job, name, projects, mySkills, socialLinks } = myData;
+  const { job, name, projects, mySkills, socialLinks, tools } = myData;
 
   const [display, setDisplay] = useState({
     services: false,

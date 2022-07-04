@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography } from "@mui/material"
+import { Box } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles(() => ({
@@ -11,12 +11,13 @@ const useStyles = makeStyles(() => ({
     left: '50%',
     transform: 'translate(-50%, -50%)',
     textAlign: 'center',
-    "& .MuiTypography-root": {
-      width: '100%',
+  },
+
+  header: {
+    width: '100%',
       color: "#fff",
+      fontFamily: 'Raleway sanSerif',
       fontSize: 50,
-      fontFamily: 'Open Sans'
-    },
   },
 
   jobTitle: {
@@ -30,7 +31,7 @@ const Greeting = ({text, jobTitle}) => {
   const classes = useStyles()
   return (
     <Box className={classes.root}>
-        <Typography>{text}</Typography>
+        <h1 className={classes.header}>{text}</h1>
         <p className={classes.jobTitle}>A Professional {jobTitle}</p>
     </Box>
   )

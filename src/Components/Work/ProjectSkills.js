@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "#fff",
+    backgroundColor: "#e5e5e5",
     width: "100%",
     borderRadius: "4px",
     display: 'flex',

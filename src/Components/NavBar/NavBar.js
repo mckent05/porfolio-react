@@ -2,24 +2,28 @@ import React, { useState } from "react";
 import { Grid, Box, Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Links from "./Links";
+import "../App.css"
 
 const useStyles = makeStyles(() => ({
   root: {
     Width: "100%",
+    positon: 'relative',
     height: "10vh",
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
-    backgroundColor: "transparent",
   },
-  fixed: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    backgroundColor: "#fff",
-    zIndex: 10,
-    boxShadow: "0 2px 8px #b2beb5",
-  },
+  // fixed: {
+  //   position: "fixed",
+  //   top: 0,
+  //   left: 0,
+  //   backgroundColor: "#fff",
+  //   zIndex: 10,
+  //   boxShadow: "0 2px 8px #b2beb5",
+  //   "& $links": {
+  //     color: '#0b0b45',
+  //   }
+  // },
   logo: {
     display: "flex",
     justifyContent: "flex-start",
@@ -64,7 +68,7 @@ const NavBar = ({ activeLink, handleLink, fixedNav }) => {
   return (
     <Grid
       container
-      className={fixedNav ? `${classes.root} ${classes.fixed}` : classes.root}
+      className={fixedNav ? `${classes.root} fixed` : classes.root}
     >
       <Box>
         <p>My logo</p>

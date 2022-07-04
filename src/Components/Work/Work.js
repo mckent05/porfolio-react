@@ -110,7 +110,7 @@ const Work = ({ allProjects, isMobile }) => {
         {isMobile
           ? projects
               .slice(limit.lowerLimit, limit.upperLimit)
-              .map((project) => (
+              .map((project, index) => (
                 <ProjectCard
                   title={project.title}
                   details={project.description}
@@ -118,9 +118,10 @@ const Work = ({ allProjects, isMobile }) => {
                   skills={project.tech}
                   live={project.live}
                   github={project.source}
+                  index= {index}
                 />
               ))
-          : projects.map((project) => (
+          : projects.map((project, index) => (
               <ProjectCard
                 title={project.title}
                 details={project.description}
@@ -128,6 +129,7 @@ const Work = ({ allProjects, isMobile }) => {
                 skills={project.tech}
                 live={project.live}
                 github={project.source}
+                index = {index}
               />
             ))}
       </Box>

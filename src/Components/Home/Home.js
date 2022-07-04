@@ -32,7 +32,7 @@ const Home = ({name, jobTitle}) => {
           <TechImage img={img3} />
           <TechImage img={img4} />
         </Box>
-        <Greeting text={`Hi! I am ${name}`} jobTitle={jobTitle} />
+        <Greeting text={`Hi! I'm ${name}`} jobTitle={jobTitle} />
     </Grid>
   )
 }
