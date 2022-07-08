@@ -1,81 +1,121 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import Input from "./Input";
+import Other from "./Other";
+import Button from "./Button";
+import { Twitter, GitHub, LinkedIn } from "@mui/icons-material";
+import Footer from './Footer';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
-    width: "80%",
-    height: '80vh',
+    width: "90%",
+    height: "80vh",
     alignSelf: "center",
     display: "flex",
     flexDirection: "column",
-    alignItem: "center",
-    justifyContent: "center",
-    border: '2px solid red',
-    "& .MuiInputBase-Input": {
-        width: '100vw'
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  textLinks:{
+    position: 'relative',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    height: '40%',
+    justifyContent:'space-between',
+    [theme.breakpoints.up('lg')]: {
+      flexDirection:'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      height: 'auto'
     }
   },
-  name: {
-    position: "relative",
-    display: "flex",
-    justifyContent: "space-between",
-    width: "100%",
+  text: {
+    position: 'relative',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    [theme.breakpoints.up('lg')]: {
+     width: '40%'
+    }
   },
-  submitBtn: {
-      backgroundColor: "#0b0b45",
-      width: '30%',
-      padding: "15px 0",
-      borderRadius: 4,
-      cursor: 'pointer',
-      color: "#fff",
-      fontSize: 20,
-      border: 'none',
-      outline: 'none',
-      display: "flex",
-      justifyContent: 'center',
-      alignContent: 'center',
-      alignSelf: 'center',
-      transition: "ease-in 0.5s",
-      "&:hover" : {
-          color: "#0b0b45",
-          backgroundColor: "#fff",
-          boxShadow: "2px 2px 8px grey"
-
-      }
+  desc: {
+    fontFamily: 'Source Sans Pro san-serif',
+    color: "#0b0b45",
+    fontSize: 22,
+  },
+  contactCont: {
+    width: '100%',
+    display: 'flex', 
+    flexDirection: 'column',
+    rowGap: 10,
+    [theme.breakpoints.up('lg')]: {
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+    }
+  },
+  socialCont: {
+    display: 'flex',
+    width:'100%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    [theme.breakpoints.up('lg')]: {
+      width:'30%',
+      justifyContent: 'space-around',
+    }
+  },
+  header: {
+    fontSize: 28,
   }
 }));
 
-const Contact = () => {
+const Contact = ({ contact }) => {
   const classes = useStyles();
   return (
-    <form className={classes.root}>
-      <Box className={classes.name}>
-        <Input
-          ariaLabel="firstName"
-          label="firstName"
-          type="text"
-          name="firstName"
-        />
-        <Input
-          ariaLabel="secondName"
-          label="secondName"
-          type="text"
-          name="secondName"
-        />
+    <div className={classes.root}>
+      <Box className={classes.textLinks}>
+        <Button title='gitHub' link={contact.gitHub}/>
+        <Box className={classes.text}>
+          <h1 className={classes.header}>Let's Collaborate</h1>
+          <p className={classes.desc}>
+            {" "}
+            I thrive on using code to build new innovations and ensuring users
+            have the best experience while using any of my software. Would you
+            like us to build innovations for the future, contact me today ?{" "}
+          </p>
+        </Box>
+        <Button title='twitter' link={contact.twitter} />
       </Box>
-      <Input
-        ariaLabel="message"
-        label="message"
-        type="textfield"
-        name="message"
-      />
-      <button type="submit" className={classes.submitBtn}>
-      Send Message
-    </button>
-    </form>
+      <Box className={classes.contactCont}>
+        <Other title='email:' contact='atemitope95@gmail.com' />
+        <Other title='Phone no:' contact='+234 806 723 4915' />
+        <Box className={classes.socialCont}>
+          <p className={classes.desc}>Contact Me:</p>
+          <Box className={classes.social}>
+            <a rel="noreferrer" href={contact.twitter}>
+              <IconButton>
+                <Twitter />
+              </IconButton>
+            </a>
+            <a rel="noreferrer" href={contact.linkedIn}>
+              <IconButton>
+                <LinkedIn />
+              </IconButton>
+            </a>
+            <a rel="noreferrer" href={contact.gitHub}>
+              <IconButton>
+                <GitHub />
+              </IconButton>
+            </a>
+          </Box>
+        </Box>
+      </Box>
+      <Footer />
+    </div>
   );
 };
 

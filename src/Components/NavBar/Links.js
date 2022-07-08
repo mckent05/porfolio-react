@@ -12,9 +12,9 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: 8,
     transition: "all 0.5s",
     [theme.breakpoints.up('lg')] : {
-      color: "#fff",
+      color: "#0b0b45",
       "&:hover": {
-        color: "#0b0b45",
+        color: "#000",
       },
     }
   },
@@ -39,7 +39,7 @@ const Links = ({ linkName, index, handle, activeLink }) => {
         spy={true}
         smooth={true}
         offset={-50}
-        onClick={() => handle(index)}
+        onClick={() => handle(index) }
       >
         {" "}
         {linkName}

@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 const SkillCard = ({ img, name, desc }) => {
   const classes = useStyles();
   return (
-    <Box className={classes.root}>
+    <Box className={classes.root} component='article'>
       <SkillImage image={img} />
       <SkillTitle skillName={name} />
       <SkillDesc skillDesc={desc} />

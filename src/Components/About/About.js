@@ -25,7 +25,7 @@ const About = ({ about }) => {
     <Grid container className={classes.root}>
       {about.map((skills) => (
         <SkillCard
-          id={skills.name}
+          key={skills.name}
           name={skills.name}
           desc={skills.description}
           img={skills.image}

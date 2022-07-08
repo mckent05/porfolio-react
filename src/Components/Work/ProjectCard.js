@@ -39,6 +39,7 @@ const ProjectCard = ({ title, details, img, skills, live, github, index }) => {
   };
   return (
     <Box
+     component='article'
       className={viewLive === index ? `${classes.root} display` : classes.root}
       onMouseOver={() => displayLink()}
       onMouseLeave={() => setViewLive('')}

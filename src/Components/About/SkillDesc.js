@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
     width: "90%",
     "& .MuiTypography-root": {
       fontSize: 15,
-      color: "grey",
+      color: "#0b0b45",
       fontFamily: 'Source Sans Pro sanSerif',
     },
   },

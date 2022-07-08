@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Drawer, List, IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Menu, GitHub, LinkedIn, Twitter } from "@mui/icons-material";
@@ -9,16 +9,21 @@ const useStyles = makeStyles(() => ({
   socialDiv: {
     width: '100%',
     display: 'flex',
+  },
+  navCont: {
+    '& .MuiDrawer-root': {
+      backgroundColor: 'black'
+    }
   }
 }))
 
-const DrawerComponent = ({ handle, activeLink, social }) => {
+const DrawerComponent = ({ social }) => {
   const classes = useStyles()
   const [links] = useState([
     "home",
     "services",
-    "projects",
     "skills",
+    "projects",
     "contact",
   ]);
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -27,18 +32,19 @@ const DrawerComponent = ({ handle, activeLink, social }) => {
     setOpenDrawer(false);
   };
 
+  useEffect(() => {
+    console.log(openDrawer)
+  }, [openDrawer])
+
   return (
-    <div>
+    <div className={classes.navCont}>
       <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
-          {links.map((el, index) => (
+          {links.map((el) => (
             <MobileLink
               key={el}
               linkName={el}
               control={drawerControl}
-              handle={handle}
-              activeLink={activeLink}
-              index={index}
             />
           ))}
         </List>
@@ -60,7 +66,7 @@ const DrawerComponent = ({ handle, activeLink, social }) => {
           </a>
         </div>
       </Drawer>
-      <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
+      <IconButton onClick={() => setOpenDrawer(true)}>
         <Menu />
       </IconButton>
     </div>

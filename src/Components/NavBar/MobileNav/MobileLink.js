@@ -1,17 +1,20 @@
 import { ListItem, ListItemText } from "@mui/material";
 import React from "react";
-import Links from "../Links";
+import { Link } from "react-scroll";
 
-const MobileLink = ({ linkName, control, handle, activeLink, index }) => {
+const MobileLink = ({ linkName, control }) => {
   return (
-    <ListItem onClick={() => control()}>
+    <ListItem>
       <ListItemText>
-        <Links
-          linkName={linkName}
-          index={index}
-          handle={handle}
-          activeLink={activeLink}
-        />
+      <Link
+        to={`${linkName}`}
+        spy={true}
+        smooth={true}
+        onClick={() => control() }
+      >
+        {" "}
+        {linkName}
+      </Link>
       </ListItemText>
     </ListItem>
   );

@@ -11,9 +11,10 @@ import styled from "styled-components";
 import SectionHeader from "./SectionHeader";
 import Contact from "./Contact/Contact";
 import Work from "./Work/Work";
+import Skills from "./Skills/Skills";
 
 const createDiv = ((hexColor) => {
-  const Div = styled.div`
+  const Div = styled.section`
     width: 100vw;
     height: auto !important;
     background-color: #${hexColor};
@@ -98,18 +99,18 @@ const Portfolio = () => {
         setActive(0);
       }
 
-      if (servicesTop + 300 < scrollPosition) {
+      if (servicesTop + 300  <= scrollPosition) {
         displayElement("services", 1);
       }
-
-      if (workTop + 300 < scrollPosition) {
-        displayElement("work", 2);
+      if (skillsTop + 300  <= scrollPosition) {
+        displayElement("skills", 2);
       }
 
-      if (skillsTop + 200 < scrollPosition) {
-        displayElement("skills", 3);
+      if (workTop + 300  <= scrollPosition) {
+        displayElement("work", 3);
       }
-      if (contactFormTop + 200 < scrollPosition) {
+
+      if (contactFormTop + 300  <= scrollPosition) {
         displayElement("contact", 4);
       }
     };
@@ -125,7 +126,7 @@ const Portfolio = () => {
     <Grid container className={classes.root}>
       <Box className={classes.cont} id="home">
         {isMobile ? (
-          <DrawerComponent social={socialLinks} active={active} handle={handleActiveLink} />
+          <DrawerComponent social={socialLinks} />
         ) : (
           <NavBar
             activeLink={active}
@@ -139,17 +140,17 @@ const Portfolio = () => {
         <SectionHeader text="What" spanText="I Do" />
         <About about={mySkills} />
       </ServiceDiv>
-      <ProjectDiv animate={display.work} id="projects" ref={work}>
+      <ProjectDiv animate={display.skills} id="skills" ref={skills}>
+        <SectionHeader text="My" spanText="Skills" />
+        <Skills skills={tools} />
+      </ProjectDiv>
+      <ServiceDiv animate={display.work} id="projects" ref={work}>
         <SectionHeader text="" spanText="Projects" />
         <Work allProjects={featuredProjects} isMobile={isMobile} />
-      </ProjectDiv>
-      <ServiceDiv animate={display.skills} id="skills" ref={skills}>
-        <SectionHeader text="My" spanText="Skills" />
-        <About about={mySkills} />
       </ServiceDiv>
       <ProjectDiv animate={display.contact} id="contact" ref={contactForm}>
         <SectionHeader text="Contact" spanText="Me" />
-        <Contact />
+        <Contact contact={socialLinks}/>
       </ProjectDiv>
     </Grid>
   );

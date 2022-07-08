@@ -43,6 +43,31 @@ const useStyles = makeStyles((theme) => ({
       rowGap: 25,
     },
   },
+  btnControl: {
+    position: "relative",
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingBottom: 25,
+  },
+  controlBtn: {
+    width: "40%",
+    position: "relative",
+    padding: "10px 0",
+    backgroundColor: "#0b0b45",
+    color: "#fff",
+    outline: "none",
+    border: "none",
+    cursor: 'pointer'
+  },
+
+  disabledBtn: {
+    backgroundColor: "grey",
+    opacity: 0.5,
+    cursor: 'not-allowed',
+    color: '#0b0b45'
+  },
 }));
 
 const Work = ({ allProjects, isMobile }) => {
@@ -118,7 +143,8 @@ const Work = ({ allProjects, isMobile }) => {
                   skills={project.tech}
                   live={project.live}
                   github={project.source}
-                  index= {index}
+                  index={index}
+                  key={project.title}
                 />
               ))
           : projects.map((project, index) => (
@@ -127,26 +153,39 @@ const Work = ({ allProjects, isMobile }) => {
                 details={project.description}
                 img={project.image}
                 skills={project.tech}
+                key={project.title}
                 live={project.live}
                 github={project.source}
-                index = {index}
+                index={index}
               />
             ))}
       </Box>
       {isMobile && (
         <Box>
           {projects.length >= 3 && (
-            <Box>
+            <Box className={classes.btnControl}>
+              <button
+                disabled={limit.upperLimit <= 3 && true}
+                onClick={() => viewLessProjects()}
+                className={
+                  limit.upperLimit <= 3
+                    ? `${classes.controlBtn} ${classes.disabledBtn}`
+                    : classes.controlBtn
+                }
+              >
+                view less
+              </button>
               <button
                 disabled={limit.upperLimit >= projects.length && true}
                 onClick={() => viewMoreProjects()}
+                className={
+                  limit.upperLimit >= projects.length
+                    ? `${classes.controlBtn} ${classes.disabledBtn}`
+                    : classes.controlBtn
+                }
               >
                 view more
               </button>
-              <button 
-              disabled={limit.upperLimit <= 3 && true}
-              onClick={() => viewLessProjects()}
-              >view less</button>
             </Box>
           )}
         </Box>

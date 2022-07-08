@@ -15,14 +15,14 @@ const useStyles = makeStyles(() => ({
 
   header: {
     width: '100%',
-      color: "#fff",
+      color: "#0b0b45",
       fontFamily: 'Raleway sanSerif',
       fontSize: 50,
   },
 
   jobTitle: {
     width: '100%',
-    color: "#fff",
+    color: "#000",
     fontSize: 25,
   }
 }))
