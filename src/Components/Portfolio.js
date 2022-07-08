@@ -1,6 +1,5 @@
 import React, { useState, useLayoutEffect, useRef } from "react";
-import { Grid, Box } from "@mui/material";
-import { useTheme, useMediaQuery } from "@mui/material";
+import { useTheme, useMediaQuery, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import NavBar from "./NavBar/NavBar";
 import DrawerComponent from "./NavBar/MobileNav/DrawerComponent";
@@ -124,7 +123,7 @@ const Portfolio = () => {
 
   return (
     <Grid container className={classes.root}>
-      <Box className={classes.cont} id="home">
+      <header className={classes.cont} id="home">
         {isMobile ? (
           <DrawerComponent social={socialLinks} />
         ) : (
@@ -135,7 +134,7 @@ const Portfolio = () => {
           />
         )}
         <Home name={name} jobTitle={job} />
-      </Box>
+      </header>
       <ServiceDiv animate={display.services} id="services" ref={services}>
         <SectionHeader text="What" spanText="I Do" />
         <About about={mySkills} />

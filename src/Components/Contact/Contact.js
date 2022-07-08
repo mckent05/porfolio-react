@@ -85,7 +85,7 @@ const Contact = ({ contact }) => {
             {" "}
             I thrive on using code to build new innovations and ensuring users
             have the best experience while using any of my software. Would you
-            like us to build innovations for the future, contact me today ?{" "}
+            like us to build innovations for the future, contact me today !!{" "}
           </p>
         </Box>
         <Button title='twitter' link={contact.twitter} />

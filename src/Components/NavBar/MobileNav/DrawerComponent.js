@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Drawer, List, IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Menu, GitHub, LinkedIn, Twitter } from "@mui/icons-material";
@@ -9,11 +9,6 @@ const useStyles = makeStyles(() => ({
   socialDiv: {
     width: '100%',
     display: 'flex',
-  },
-  navCont: {
-    '& .MuiDrawer-root': {
-      backgroundColor: 'black'
-    }
   }
 }))
 
@@ -32,13 +27,19 @@ const DrawerComponent = ({ social }) => {
     setOpenDrawer(false);
   };
 
-  useEffect(() => {
-    console.log(openDrawer)
-  }, [openDrawer])
-
   return (
     <div className={classes.navCont}>
-      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+      <Drawer PaperProps= {{
+        sx: {
+          backgroundColor: '#f2f2f2',
+          color: "#0b0b45",
+          width: '50%',
+          display: 'flex',
+          flexDirection:'column',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }
+      }} open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
           {links.map((el) => (
             <MobileLink
