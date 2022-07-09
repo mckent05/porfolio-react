@@ -2,31 +2,37 @@ import React, { useState } from "react";
 import { Grid, Box, Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Links from "./Links";
-import "../App.css"
+import icon from "../../Images/programmer.png"
+import "../App.css";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     Width: "100%",
-    positon: 'relative',
+    positon: "relative",
     height: "10vh",
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
   },
-  // fixed: {
-  //   position: "fixed",
-  //   top: 0,
-  //   left: 0,
-  //   backgroundColor: "#fff",
-  //   zIndex: 10,
-  //   boxShadow: "0 2px 8px #b2beb5",
-  //   "& $links": {
-  //     color: '#0b0b45',
-  //   }
-  // },
-  logo: {
+
+  imageCont: {
+    position: "relative",
+    width: 30,
+    height: 30,
     display: "flex",
-    justifyContent: "flex-start",
+    justifyContent: "center",
+    borderRadius: "100%",
+    [theme.breakpoints.up("lg")]: {
+      width: 30,
+      height: 30,
+    },
+  },
+  img: {
+    position: "relative",
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    borderRadius: "100%",
   },
 
   btnCont: {
@@ -70,8 +76,8 @@ const NavBar = ({ activeLink, handleLink, fixedNav }) => {
       container
       className={fixedNav ? `${classes.root} fixed` : classes.root}
     >
-      <Box>
-        <p>My logo</p>
+      <Box className={classes.imageCont}>
+        <img className={classes.img} src={icon} alt="profile-icon" />
       </Box>
       <Box className={classes.links}>
         {links.map((el, index) => (
