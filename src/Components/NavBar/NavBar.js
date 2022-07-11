@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Grid, Box, Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Links from "./Links";
-import icon from "../../Images/programmer.png"
+import icon from "../../Images/profilepicture.jpeg";
 import "../App.css";
 
 const useStyles = makeStyles((theme) => ({

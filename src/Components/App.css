@@ -8,7 +8,7 @@
 }
 
 .display .link-container {
-  display: flex
+  display: flex;
 }
 
 .link-container {
@@ -25,8 +25,6 @@
   opacity: 0.75;
   transition: ease-out 0.5s;
 }
-
-
 
 .fixed a {
   color: #0b0b45;

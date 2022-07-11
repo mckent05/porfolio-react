@@ -5,13 +5,12 @@ import ProjectLinks from "./ProjectLinks";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: "100%",
     position: "relative",
     height: "40vh",
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up("lg")]: {
       width: "90%",
-    }
-
+    },
   },
   img: {
     position: "relative",

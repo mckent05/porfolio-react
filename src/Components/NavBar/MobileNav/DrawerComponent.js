@@ -4,16 +4,15 @@ import { makeStyles } from "@mui/styles";
 import { Menu, GitHub, LinkedIn, Twitter } from "@mui/icons-material";
 import MobileLink from "./MobileLink";
 
-
 const useStyles = makeStyles(() => ({
   socialDiv: {
-    width: '100%',
-    display: 'flex',
-  }
-}))
+    width: "100%",
+    display: "flex",
+  },
+}));
 
 const DrawerComponent = ({ social }) => {
-  const classes = useStyles()
+  const classes = useStyles();
   const [links] = useState([
     "home",
     "services",
@@ -29,24 +28,24 @@ const DrawerComponent = ({ social }) => {
 
   return (
     <div className={classes.navCont}>
-      <Drawer PaperProps= {{
-        sx: {
-          backgroundColor: '#f2f2f2',
-          color: "#0b0b45",
-          width: '50%',
-          display: 'flex',
-          flexDirection:'column',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }
-      }} open={openDrawer} onClose={() => setOpenDrawer(false)}>
+      <Drawer
+        PaperProps={{
+          sx: {
+            backgroundColor: "#f2f2f2",
+            color: "#0b0b45",
+            width: "50%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "center",
+          },
+        }}
+        open={openDrawer}
+        onClose={() => setOpenDrawer(false)}
+      >
         <List>
           {links.map((el) => (
-            <MobileLink
-              key={el}
-              linkName={el}
-              control={drawerControl}
-            />
+            <MobileLink key={el} linkName={el} control={drawerControl} />
           ))}
         </List>
         <div className={classes.socialDiv}>

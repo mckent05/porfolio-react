@@ -59,14 +59,14 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     outline: "none",
     border: "none",
-    cursor: 'pointer'
+    cursor: "pointer",
   },
 
   disabledBtn: {
     backgroundColor: "grey",
     opacity: 0.5,
-    cursor: 'not-allowed',
-    color: '#0b0b45'
+    cursor: "not-allowed",
+    color: "#0b0b45",
   },
 }));
 
@@ -128,6 +128,7 @@ const Work = ({ allProjects, isMobile }) => {
             title={tech}
             filter={filterProjects}
             active={activeButton}
+            key={tech}
           />
         ))}
       </Box>

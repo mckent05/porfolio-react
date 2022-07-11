@@ -4,19 +4,19 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   link: {
-    color: '#0b0b45',
+    color: "#0b0b45",
     fontSize: 23,
     textDecoration: "none",
     textTransform: "capitalize",
     cursor: "pointer",
     paddingBottom: 8,
     transition: "all 0.5s",
-    [theme.breakpoints.up('lg')] : {
+    [theme.breakpoints.up("lg")]: {
       color: "#0b0b45",
       "&:hover": {
         color: "#000",
       },
-    }
+    },
   },
   active: {
     borderBottom: "2px solid #0b0b45",
@@ -39,7 +39,7 @@ const Links = ({ linkName, index, handle, activeLink }) => {
         spy={true}
         smooth={true}
         offset={-50}
-        onClick={() => handle(index) }
+        onClick={() => handle(index)}
       >
         {" "}
         {linkName}

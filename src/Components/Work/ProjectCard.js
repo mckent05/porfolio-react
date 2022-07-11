@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#ccc",
     transition: "ease-in 0.5s",
     "&:hover": {
-      boxShadow: '0px 4px 8px  #999999'
+      boxShadow: "0px 4px 8px  #999999",
     },
     [theme.breakpoints.up("lg")]: {
       width: "30%",
@@ -39,10 +39,10 @@ const ProjectCard = ({ title, details, img, skills, live, github, index }) => {
   };
   return (
     <Box
-     component='article'
+      component="article"
       className={viewLive === index ? `${classes.root} display` : classes.root}
       onMouseOver={() => displayLink()}
-      onMouseLeave={() => setViewLive('')}
+      onMouseLeave={() => setViewLive("")}
     >
       <ProjectDetails title={title} skills={skills} details={details} />
       <ProjectImage image={img} liveLink={live} gitHubLink={github} />

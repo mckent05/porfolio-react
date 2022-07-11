@@ -12,7 +12,7 @@ import Contact from "./Contact/Contact";
 import Work from "./Work/Work";
 import Skills from "./Skills/Skills";
 
-const createDiv = ((hexColor) => {
+const createDiv = (hexColor) => {
   const Div = styled.section`
     width: 100vw;
     height: auto !important;
@@ -25,7 +25,7 @@ const createDiv = ((hexColor) => {
     transition: ease-out 1.5s;
   `;
   return Div;
-});
+};
 
 const ServiceDiv = createDiv("f2f2f2"),
   ProjectDiv = createDiv("e5e5e5");
@@ -74,7 +74,7 @@ const Portfolio = () => {
 
   useLayoutEffect(() => {
     const topPosition = (element) => element.offsetTop;
-    
+
     const displayElement = (element, elementIndex) => {
       setDisplay((state) => ({ ...state, [element]: true }));
       setActive(elementIndex);
@@ -87,7 +87,6 @@ const Portfolio = () => {
 
     const onScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
-      console.log(scrollPosition, servicesTop);
 
       if (scrollPosition > 1000) {
         setNavFixed(true);
@@ -98,18 +97,18 @@ const Portfolio = () => {
         setActive(0);
       }
 
-      if (servicesTop + 300  <= scrollPosition) {
+      if (servicesTop + 300 <= scrollPosition) {
         displayElement("services", 1);
       }
-      if (skillsTop + 300  <= scrollPosition) {
+      if (skillsTop + 300 <= scrollPosition) {
         displayElement("skills", 2);
       }
 
-      if (workTop + 300  <= scrollPosition) {
+      if (workTop + 300 <= scrollPosition) {
         displayElement("work", 3);
       }
 
-      if (contactFormTop + 300  <= scrollPosition) {
+      if (contactFormTop + 300 <= scrollPosition) {
         displayElement("contact", 4);
       }
     };
@@ -149,7 +148,7 @@ const Portfolio = () => {
       </ServiceDiv>
       <ProjectDiv animate={display.contact} id="contact" ref={contactForm}>
         <SectionHeader text="Contact" spanText="Me" />
-        <Contact contact={socialLinks}/>
+        <Contact contact={socialLinks} />
       </ProjectDiv>
     </Grid>
   );

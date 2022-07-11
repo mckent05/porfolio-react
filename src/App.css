@@ -3,6 +3,10 @@
     font-family: 'Satisfy', cursive;
 }
 
+.App {
+    background-color: #f2f2f2;
+}
+
 *::-webkit-scrollbar {
     width: 0.6rem
 }
