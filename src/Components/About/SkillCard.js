@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     transition: "all 0.5s",
     "&:hover": {
-      boxShadow: "0 1px 8px grey",
       transform: "scale(1.02)",
     },
     [theme.breakpoints.up("lg")]: {

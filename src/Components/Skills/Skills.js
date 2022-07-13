@@ -63,12 +63,12 @@ const Skills = ({ skills }) => {
         {" "}
         An electrical engineer, who has spent the last few months in a remote
         enviroment, building real-world projects and collaborating with other
-        developers around the world. My background as an electrical enginer has
+        developers around the world. My background as an electrical engineer has
         helped me with the challenges that come with being a software engineer,
         it has helped me come up with innovative solutions whilst thinking
         criticially. Also, as a former field engineer in the renewable energy
-        sector who has also always put customer satisfaction first, my
-        expereince here has ensured that I thrive to build software that gives
+        sector who always puts customer satisfaction first, my
+        work here has ensured that I thrive to build software that gives
         users the best experience.{" "}
       </h3>
     </Box>

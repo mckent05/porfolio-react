@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
     fontSize: 20,
     borderRadius: 4,
     cursor: "pointer",
+    fontFamily: "Satisfy",
     color: "#fff",
     border: "none",
     outline: "none",

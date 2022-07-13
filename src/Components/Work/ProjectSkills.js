@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     order: 1,
     padding: "5px 5px",
-    boxShadow: "0 2px 7px grey",
+    boxShadow: "0 1px 1px grey",
     [theme.breakpoints.up("lg")]: {
       width: "80%",
     },

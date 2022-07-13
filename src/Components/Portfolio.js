@@ -138,8 +138,8 @@ const Portfolio = () => {
         <SectionHeader text="What" spanText="I Do" />
         <About about={mySkills} />
       </ServiceDiv>
-      <ProjectDiv animate={display.skills} id="skills" ref={skills}>
-        <SectionHeader text="My" spanText="Skills" />
+      <ProjectDiv animate={display.skills} id="about" ref={skills}>
+        <SectionHeader text="About" spanText="Me" />
         <Skills skills={tools} />
       </ProjectDiv>
       <ServiceDiv animate={display.work} id="projects" ref={work}>

@@ -31,13 +31,13 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
     width: "100%",
     textTransform: "capitalize",
+    fontfamily: 'Satisfy'
   },
   details: {
     height: "80%",
     textAlign: "left",
     display: "flex",
     alignItems: "center",
-    fontFamily: "Source Sans Pro sanSerif",
   },
 }));
 

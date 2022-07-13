@@ -5,6 +5,7 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   link: {
     color: "#0b0b45",
+    fontFamily: "Satisfy cursive",
     fontSize: 23,
     textDecoration: "none",
     textTransform: "capitalize",

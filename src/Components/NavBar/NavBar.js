@@ -66,7 +66,7 @@ const NavBar = ({ activeLink, handleLink, fixedNav }) => {
   const [links] = useState([
     "home",
     "services",
-    "skills",
+    "about",
     "projects",
     "contact",
   ]);

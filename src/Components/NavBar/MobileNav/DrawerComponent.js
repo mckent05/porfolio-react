@@ -16,7 +16,7 @@ const DrawerComponent = ({ social }) => {
   const [links] = useState([
     "home",
     "services",
-    "skills",
+    "about",
     "projects",
     "contact",
   ]);

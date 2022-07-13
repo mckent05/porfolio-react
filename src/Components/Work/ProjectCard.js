@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#ccc",
     transition: "ease-in 0.5s",
     "&:hover": {
-      boxShadow: "0px 4px 8px  #999999",
+      boxShadow: "0px 1px 2px #999999",
     },
     [theme.breakpoints.up("lg")]: {
       width: "30%",

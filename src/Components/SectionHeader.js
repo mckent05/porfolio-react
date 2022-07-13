@@ -18,6 +18,7 @@ const useStyles = makeStyles(() => ({
   },
   text: {
     color: "#0b0b45",
+    fontFamily: "Satisfy",
   },
 }));
 

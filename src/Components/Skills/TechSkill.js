@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     backgroundColor: "#fff",
-    boxShadow: "0 2px 10px grey",
+    boxShadow: "0 2px 2px grey",
     borderRadius: "100%",
     [theme.breakpoints.up("lg")]: {
       width: 80,
@@ -33,6 +33,10 @@ const useStyles = makeStyles((theme) => ({
     objectFit: "contain",
     borderRadius: "100%",
   },
+
+  techName: {
+    fontFamily: "Satisfy",
+  }
 }));
 
 const TechSkill = ({ image, techName }) => {
@@ -42,7 +46,7 @@ const TechSkill = ({ image, techName }) => {
       <Box className={classes.imageCont}>
         <img className={classes.img} src={image} alt={techName} />
       </Box>
-      <h3>{techName}</h3>
+      <h3 className={classes.techName}>{techName}</h3>
     </Box>
   );
 };

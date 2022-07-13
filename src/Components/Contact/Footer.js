@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   text: {
     fontSize: 22,
     color: "#fff",
+    fontFamily: "Satisfy"
   },
   copyright: {
     display: "flex",
