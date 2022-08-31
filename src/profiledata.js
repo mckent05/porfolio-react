@@ -5,6 +5,7 @@ import stfa from "./Images/home2.PNG";
 import profiles from "./Images/Capture1.PNG";
 import leaderboard from "./Images/leaderboard.PNG";
 import rockets from "./Images/spacehub.PNG";
+import shoppingify from "./Images/span1.PNG"
 import brighttop from "./Images/BrightTop.PNG";
 import bookstore from "./Images/bookstore.PNG";
 import axios from "./Images/skills/axios.png";
@@ -121,6 +122,15 @@ export const myData = {
   ],
   projects: [
     {
+      title: "Shoppingify",
+      image: shoppingify,
+      description:
+        "A simple we app that makes shopping easy for you. This web app let's users take their shopping list wherever they go. Users can additems to their shopping list from the various items already in the app, or can add a new item if they cannot find the item they want.",
+      tech:["React/Redux", "Ruby/Rails"],
+      live: "https://steve-shoppingify-app.netlify.app",
+      source: "https://github.com/mckent05/shoppingify-frontend",
+    },
+    {
       title: "E-commerce Web App",
       image: commerce,
       description:
@@ -146,15 +156,6 @@ export const myData = {
       tech: ["React/Redux", "Ruby/Rails"],
       live: "https://polar-lake-28978.herokuapp.com/",
       source: "https://github.com/mckent05/maintenance_budget",
-    },
-    {
-      title: "LeaderBoard",
-      image: leaderboard,
-      description:
-        "This project displays a set of User names and their scores gotten from the LeaderBoard service API. This project sends and recieves data from this API. Users can input their scores and it wil be displayed on the scoreboard",
-      tech: ["HTML/CSS", "JavaScript"],
-      live: "https://mckent05.github.io/Leader_Board/",
-      source: "https://github.com/mckent05/Leader_Board",
     },
     {
       title: "steve football app",
