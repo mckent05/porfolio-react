@@ -5,7 +5,7 @@ import stfa from "./Images/home2.PNG";
 import profiles from "./Images/Capture1.PNG";
 import leaderboard from "./Images/leaderboard.PNG";
 import rockets from "./Images/spacehub.PNG";
-import shoppingify from "./Images/span1.PNG"
+import shoppingify from "./Images/snap1.PNG"
 import brighttop from "./Images/BrightTop.PNG";
 import bookstore from "./Images/bookstore.PNG";
 import axios from "./Images/skills/axios.png";
@@ -125,7 +125,7 @@ export const myData = {
       title: "Shoppingify",
       image: shoppingify,
       description:
-        "A simple we app that makes shopping easy for you. This web app let's users take their shopping list wherever they go. Users can additems to their shopping list from the various items already in the app, or can add a new item if they cannot find the item they want.",
+        "A simple web app that makes shopping easy for you. This web app lets users take their shopping list wherever they go. Users can add items to their shopping list from the various items already in the app, or can add a new item if they cannot find the item they want.",
       tech:["React/Redux", "Ruby/Rails"],
       live: "https://steve-shoppingify-app.netlify.app",
       source: "https://github.com/mckent05/shoppingify-frontend",
