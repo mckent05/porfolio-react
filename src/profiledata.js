@@ -207,21 +207,21 @@ export const myData = {
     {
       name: "BackEnd Development",
       image:
-        "http://res.cloudinary.com/duj88gras/image/upload/v1655326985/ojabyiclltbnrmtzppzp.png",
+        "https://res.cloudinary.com/duj88gras/image/upload/v1670339235/pexels-pixabay-276452_i5qnzc.jpg",
       description:
         "I can build your server-side web application logic and integration of the work front-end developers do. I write the web services and APIs used by front-end developers using Rails and some other libraries.",
     },
     {
       name: "FrontEnd Development",
       image:
-        "http://res.cloudinary.com/duj88gras/image/upload/v1655326985/mtjpugrrucbpcbyw7qzc.jpg",
+        "https://res.cloudinary.com/duj88gras/image/upload/v1670338541/pexels-pixabay-270557_ocrt2t.jpg",
       description:
         " I create websites and applications using web languages such as HTML, CSS, JavaScript, and libraries like React that allows users to access and interact with the site or app.",
     },
     {
       name: "FullStack Development",
       image:
-        "http://res.cloudinary.com/duj88gras/image/upload/v1655326985/udgpkleywhwuokmrdlg5.jpg",
+        "https://res.cloudinary.com/duj88gras/image/upload/v1670339405/pexels-pixabay-270360_iq2bbx.jpg",
       description:
         "I work on both the front end and back end of a web application. I develop powerful modern web applications that form the foundation for apps and websites using React and Rails",
     },

@@ -23,15 +23,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     borderRadius: "100%",
     [theme.breakpoints.up("lg")]: {
-      width: 30,
-      height: 30,
+      width: 50,
+      height: 50,
     },
   },
   img: {
     position: "relative",
     width: "100%",
     height: "100%",
-    objectFit: "contain",
+    objectFit: "cover",
     borderRadius: "100%",
   },
 

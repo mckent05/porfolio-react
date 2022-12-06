@@ -7,13 +7,13 @@ const useStyles = makeStyles(() => ({
     position: "relative",
     width: "90%",
     height: "40vh",
-    backgroundColor: "#fff",
+    backgroundColor: "inherit",
   },
   img: {
     position: "relative",
     width: "100%",
     height: "100%",
-    objectFit: "center",
+    objectFit: "cover",
     borderRadius: 10,
   },
 }));
