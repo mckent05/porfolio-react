@@ -173,7 +173,7 @@ export const myData = {
         "A simple web app that displays a list of sudent and their test scores. This app fetaches data from a RESTful api and displays a list of students and their test scores. Tags can also be added to individual student profile.",
       tech: ["React/Redux"],
       live: "https://student-test-profile.herokuapp.com/",
-      source: "https://github.com/mckent05/student-profile-9359",
+      source: "https://steve-student-profile.netlify.app",
     },
     {
       title: "Space Rockets Hub",
